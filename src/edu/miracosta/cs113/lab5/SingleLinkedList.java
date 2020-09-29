@@ -71,6 +71,7 @@ public class SingleLinkedList<E> {
 	        }
 	    }
 
+	    
 	    /**
 	     * Remove the node after a given node
 	     * @param node The node before the one to be removed
@@ -240,6 +241,28 @@ public class SingleLinkedList<E> {
 
 
 		public static void exercise() {
-
+			//Creates the Linked list with Tom, Dick, Harry, Sam, not linked together
+			Node<String> tom = new Node<String>("Tom",null);
+			Node<String> dick = new Node<String>("Dick",null);
+			Node<String> harry = new Node<String>("Harry",null);
+			Node<String> sam = new Node<String>("Sam",null);
+			//Connects all the nodes into a list
+			Node head = tom;
+			tom.next = dick;
+			dick.next = harry;
+			harry.next = sam;
+			//A
+			Node<String> bill = new Node<String>("Bill",tom);
+			head = bill;
+			//B
+			Node<String> sue = new Node<String>("Sue",sam);
+			harry.next = sue;
+			sue.next = sam;
+			//C.Removes bill, changes the head to Tom  
+			head = head.next; //Making tom the new head
+			//D.Removes Sam
+			sue.next = sue.next.next; //Sue is connected to sam, so by doing sue.next.next, we are connecting sue.next to null.
+			
+			
 		}
 }

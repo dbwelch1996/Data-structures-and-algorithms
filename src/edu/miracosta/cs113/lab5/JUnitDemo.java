@@ -80,6 +80,5 @@ class JUnitDemo {
         assert ("harry".equals(testInstance.get(2)));
     }
 
- 
 
 }
